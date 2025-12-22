@@ -1,6 +1,10 @@
-# Image Optimizer
+<div align="center">
+  <img src="icon.png" alt="Image Optimizer Logo" width="200"/>
 
-Aplikasi sederhana untuk mengoptimasi gambar dengan UI modern dan CLI support.
+  # Image Optimizer
+
+  Aplikasi sederhana untuk mengoptimasi gambar dengan UI modern dan CLI support.
+</div>
 
 ## Fitur
 
