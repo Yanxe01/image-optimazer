@@ -1,7 +1,6 @@
 const express = require('express');
 const multer = require('multer');
 const sharp = require('sharp');
-const path = require('path');
 const fs = require('fs');
 
 const app = express();
@@ -24,8 +23,8 @@ const upload = multer({
     }
 });
 
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from root directory
+app.use(express.static(__dirname));
 
 // Optimize image endpoint
 app.post('/optimize', upload.single('image'), async (req, res) => {

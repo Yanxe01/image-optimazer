@@ -2,6 +2,7 @@ node_modules/
 input/
 output/
 backup/
+public/
 *.log
 .DS_Store
 .env
