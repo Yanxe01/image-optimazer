@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Optimizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Optimizer</h1>
+
+        <div class="upload-area" id="uploadArea">
+            <p>Klik atau seret gambar ke sini</p>
+            <small>JPG, PNG, WEBP (Max 20MB)</small>
+            <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        </div>
+
+        <div class="settings">
+            <label>Kualitas <span id="qualityValue">85</span>%</label>
+            <input type="range" id="quality" min="1" max="100" value="85">
+
+            <label>Lebar Max <span id="widthValue">1200</span>px</label>
+            <input type="range" id="maxWidth" min="400" max="3000" step="100" value="1200">
+
+            <label>Format</label>
+            <select id="format">
+                <option value="jpeg">JPEG</option>
+                <option value="png">PNG</option>
+                <option value="webp">WebP</option>
+            </select>
+        </div>
+
+        <button class="btn" id="optimizeBtn" disabled>Pilih Gambar</button>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Memproses...</p>
+        </div>
+
+        <div class="result" id="result">
+            <h3>Berhasil</h3>
+            <p>Ukuran Asli: <strong id="originalSize">-</strong></p>
+            <p>Ukuran Baru: <strong id="optimizedSize">-</strong></p>
+            <p>Pengurangan: <strong id="reduction">-</strong></p>
+            <button class="btn" id="downloadBtn">Download</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

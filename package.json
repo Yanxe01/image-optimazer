@@ -1,0 +1,31 @@
+{
+  "name": "image-optimizer",
+  "version": "1.0.0",
+  "description": "Simple and powerful image optimizer with web UI and CLI support",
+  "main": "api/optimize.js",
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node script.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "image",
+    "optimizer",
+    "compression",
+    "sharp",
+    "webp",
+    "jpeg",
+    "png"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "multiparty": "^4.2.3",
+    "sharp": "^0.33.1"
+  },
+  "devDependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.2"
+  }
+}
