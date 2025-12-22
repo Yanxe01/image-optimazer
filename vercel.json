@@ -1,14 +1,10 @@
 {
+  "buildCommand": "echo 'No build needed'",
+  "outputDirectory": "public",
   "rewrites": [
     {
       "source": "/api/optimize",
       "destination": "/api/optimize.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/public/$1"
     }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }
