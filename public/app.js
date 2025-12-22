@@ -81,7 +81,7 @@ optimizeBtn.addEventListener('click', async () => {
     optimizeBtn.disabled = true;
 
     try {
-        const response = await fetch('/optimize', {
+        const response = await fetch('/api/optimize', {
             method: 'POST',
             body: formData
         });
