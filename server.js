@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const sharp = require('sharp');
-const fs = require('fs');
+const path = require('path');
 
 const app = express();
 const PORT = 3000;
@@ -23,11 +23,11 @@ const upload = multer({
     }
 });
 
-// Serve static files from root directory
-app.use(express.static(__dirname));
+// Serve static files from public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Optimize image endpoint
-app.post('/optimize', upload.single('image'), async (req, res) => {
+// Optimize image endpoint (support both /optimize and /api/optimize)
+const optimizeHandler = async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).json({ error: 'Tidak ada file yang diupload' });
@@ -117,7 +117,11 @@ app.post('/optimize', upload.single('image'), async (req, res) => {
         console.error('Error optimizing image:', error);
         res.status(500).json({ error: 'Terjadi kesalahan saat mengoptimasi gambar' });
     }
-});
+};
+
+// Register routes for both endpoints
+app.post('/optimize', upload.single('image'), optimizeHandler);
+app.post('/api/optimize', upload.single('image'), optimizeHandler);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
